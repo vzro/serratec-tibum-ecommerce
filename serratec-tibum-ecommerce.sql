@@ -1,6 +1,3 @@
-Create Database Tibum_Store
-go
-
 Use Tibum_Store
 
 Create Table Cliente (
@@ -37,7 +34,6 @@ Create Table Funcionarios (
     CPF char (11) not null
 )
 
-
 create table Funcionario_Produto
 (
 	id_Funcionario int,
@@ -51,4 +47,11 @@ create table Pedido (
 	DataRealizada date Default Getdate(),
 	id_Cliente int,
 	foreign key (id_Cliente) references Cliente(id_Cliente)
+	)
+
+Create Table Pedido_Produtos (
+	id_Produto int, 
+	id_Pedido int,
+	foreign key (id_Produto) references Produtos (id_Produto),
+	foreign key (id_Pedido) references Pedido (id_Pedido)
 	)
