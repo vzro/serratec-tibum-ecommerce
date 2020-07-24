@@ -17,12 +17,12 @@ Telefone int,
 )
 
 Create Table Produtos (
-id_Produto char (120) not null,
+id_Produto int identity not null,
 NomeProduto varchar (20) not null,
-QtdEstoque int identity (1,1) not null,
+QtdEstoque int not null,
 DataFabric Date,
 Valor int not null,
-DataCadastro Date GetDate(),
+DataCadastro Date Default GetDate(),
 )
 
 
