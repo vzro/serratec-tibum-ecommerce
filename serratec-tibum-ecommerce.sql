@@ -1,3 +1,5 @@
+Create Database Tibum_Store
+
 Use Tibum_Store
 
 Create Table Cliente (
@@ -19,6 +21,11 @@ Create Table Produtos (
     DataFabric Date,
     Valor float not null,
     DataCadastro Date Default GetDate()
+)
+
+Create Table Categoria (
+     id_Categoria int identity primary key,
+	 Nome varchar (50) not null,
 )
 
 create table Categoria_Produto 
