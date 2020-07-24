@@ -30,3 +30,7 @@ Create Table Funcionarios (
     Nome varchar (20) not null,
     CPF char (11) not null
 )
+Create Table Categoria (
+     id_Categoria int identity primary key,
+	 Nome varchar (50) not null,
+)
