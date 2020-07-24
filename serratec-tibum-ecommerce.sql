@@ -37,6 +37,12 @@ Create Table Funcionarios (
     CPF char (11) not null
 )
 
+Create Table Categoria (
+     id_Categoria int identity primary key,
+	 Nome varchar (50) not null,
+)
+
+
 
 create table Funcionario_Produto
 (
@@ -45,3 +51,4 @@ create table Funcionario_Produto
 	foreign key (id_Produto) references Produtos(id_Produto),
 	foreign key (id_Funcionario) references funcionarios(id_Funcionario)
 )
+
