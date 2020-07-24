@@ -7,12 +7,12 @@ Create Table Cliente (
     id_Cliente int identity primary key,
     Nome varchar(80) not null,
     Endereco varchar(120) not null,
-    ClienteLogin varchar (20) not null,
-    Senha int not null,
-    Email char (80) not null,
-    CPF char (14) not null,
+    ClienteLogin varchar (20) not null unique,
+    Senha varchar(30) not null,
+    Email char (80) not null unique,
+    CPF char (11) not null unique,
     Data_Nasc Date not null,
-    Telefone int
+    Telefone char (11)
 )
 
 Create Table Produtos (
@@ -20,7 +20,7 @@ Create Table Produtos (
     NomeProduto varchar (20) not null,
     QtdEstoque int not null,
     DataFabric Date,
-    Valor int not null,
+    Valor float not null,
     DataCadastro Date Default GetDate()
 )
 
