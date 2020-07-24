@@ -1,4 +1,3 @@
--- arquivo inicial
 Create Database Tibum_Store
 go
 
@@ -23,6 +22,13 @@ QtdEstoque int not null,
 DataFabric Date,
 Valor int not null,
 DataCadastro Date Default GetDate(),
+)
+
+Create Table Funcionarios (
+Salário varchar(20) not null,
+Código char(20) not null,
+Nome varchar (20) not null,
+CPF char (14) not null
 )
 
 
