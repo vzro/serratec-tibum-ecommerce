@@ -1,5 +1,4 @@
 Create Database Tibum_Store
-go
 
 Use Tibum_Store
 
@@ -24,6 +23,11 @@ Create Table Produtos (
     DataCadastro Date Default GetDate()
 )
 
+Create Table Categoria (
+     id_Categoria int identity primary key,
+	 Nome varchar (50) not null,
+)
+
 create table Categoria_Produto 
 (
 	id_Categoria int identity primary key,
@@ -37,13 +41,6 @@ Create Table Funcionarios (
     CPF char (11) not null
 )
 
-Create Table Categoria (
-     id_Categoria int identity primary key,
-	 Nome varchar (50) not null,
-)
-
-
-
 create table Funcionario_Produto
 (
 	id_Funcionario int,
@@ -52,3 +49,16 @@ create table Funcionario_Produto
 	foreign key (id_Funcionario) references funcionarios(id_Funcionario)
 )
 
+create table Pedido (
+	id_Pedido int identity primary key,
+	DataRealizada date Default Getdate(),
+	id_Cliente int,
+	foreign key (id_Cliente) references Cliente(id_Cliente)
+	)
+
+Create Table Pedido_Produtos (
+	id_Produto int, 
+	id_Pedido int,
+	foreign key (id_Produto) references Produtos (id_Produto),
+	foreign key (id_Pedido) references Pedido (id_Pedido)
+	)
