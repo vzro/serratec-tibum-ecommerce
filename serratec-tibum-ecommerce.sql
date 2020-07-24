@@ -24,9 +24,24 @@ Create Table Produtos (
     DataCadastro Date Default GetDate()
 )
 
+create table Categoria_Produto 
+(
+	id_Categoria int identity primary key,
+	nomeCategoria varchar (20) not null
+) 
+
 Create Table Funcionarios (
     Salario varchar(20) not null,
-    Codigo int identity primary key,
+    id_Funcionario int identity primary key,
     Nome varchar (20) not null,
     CPF char (11) not null
+)
+
+
+create table Funcionario_Produto
+(
+	id_Funcionario int,
+	id_Produto int,
+	foreign key (id_Produto) references Produtos(id_Produto),
+	foreign key (id_Funcionario) references funcionarios(id_Funcionario)
 )
